@@ -150,5 +150,9 @@
 		grid-row: auto auto auto auto auto auto;
 
 		gap: 24px;
+
+		* {
+			font-weight: normal;
+		}
 	}
 </style>
