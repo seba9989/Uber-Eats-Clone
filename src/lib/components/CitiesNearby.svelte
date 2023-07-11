@@ -134,7 +134,7 @@
 		width: 100%;
 		height: 360px;
 
-		margin: 24px;
+		margin: 24px 0;
 
 		display: flex;
 		justify-content: center;

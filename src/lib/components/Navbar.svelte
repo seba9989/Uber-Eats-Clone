@@ -52,12 +52,15 @@
 
 		padding: 0 40px;
 
+		box-shadow: none;
+
 		background: transparent;
 
-		transition: background 500ms;
+		transition: all 200ms;
 
 		&.white {
 			background: #fff;
+			box-shadow: rgb(226, 226, 226) 0px -2px 0px inset;
 		}
 
 		.left-side {

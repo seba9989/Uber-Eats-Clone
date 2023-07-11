@@ -85,11 +85,17 @@
 			<a href="/">Polityka prywatności</a>
 			{' oraz '} <a href="/">Warunki korzystania z usługi</a>{' '} firmy Google.
 		</p>
+
+		<p>© <!-- -->2023<!-- --> Uber Technologies Inc.</p>
 	</div>
 </footer>
 
 <style lang="scss">
 	footer {
+		a:hover {
+			text-decoration: underline;
+		}
+
 		margin-top: 80px;
 		padding: 72px 40px 88px 40px;
 
@@ -169,6 +175,8 @@
 		.disclaimer {
 			display: flex;
 			justify-content: end;
+			gap: 40px;
+
 			* {
 				font-size: 14px;
 				font-weight: normal;
