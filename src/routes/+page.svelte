@@ -2,6 +2,7 @@
 	import CitiesNearby from '$lib/components/CitiesNearby.svelte';
 	import CountriesWhereUberEatsOperates from '$lib/components/CountriesWhereUberEatsOperates.svelte';
 	import FirstFullSide from '$lib/components/FirstFullSide.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import Imges from '$lib/components/Imges.svelte';
 </script>
 
@@ -17,6 +18,8 @@
 		</a>
 	</div>
 </div>
+
+<Footer />
 
 <style lang="scss">
 	.padding {
