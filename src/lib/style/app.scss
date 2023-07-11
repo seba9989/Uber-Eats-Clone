@@ -2,6 +2,7 @@
 *::after,
 *::before {
 	box-sizing: border-box;
+	text-decoration: none;
 
 	font-family: sans-serif;
 
@@ -15,8 +16,6 @@ body {
 
 	display: flex;
 	flex-direction: column;
-
-	background: #555;
 }
 
 button {

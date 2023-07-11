@@ -50,13 +50,6 @@
 	</div>
 </main>
 
-<svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,500,1,0"
-	/>
-</svelte:head>
-
 <style lang="scss">
 	main {
 		height: 100vh;
@@ -156,6 +149,9 @@
 		}
 
 		.info {
+			a {
+				text-decoration: underline;
+			}
 			margin-top: 24px;
 		}
 	}
