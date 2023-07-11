@@ -4,34 +4,45 @@
 	$: console.log(y);
 </script>
 
-<header class:white={y > 0}>
-	<div class="left-side">
-		<button class="hamburger-menu">
-			<svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" class="svg">
-				<path
-					d="M19.167 3.333H.833v2.5h18.334v-2.5zm0 5.834H.833v2.5h18.334v-2.5zM.833 15h18.334v2.5H.833V15z"
-				/>
-			</svg>
-		</button>
-		<img src="/UberLogo.svg" alt="Uber Eats" />
-	</div>
+<div class="h0">
+	<header class:white={y > 0}>
+		<div class="left-side">
+			<button class="hamburger-menu">
+				<svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" class="svg">
+					<path
+						d="M19.167 3.333H.833v2.5h18.334v-2.5zm0 5.834H.833v2.5h18.334v-2.5zM.833 15h18.334v2.5H.833V15z"
+					/>
+				</svg>
+			</button>
+			<img src="/UberLogo.svg" alt="Uber Eats" />
 
-	<nav class="right-side">
-		<a href="/logIn" class="login">
-			<span class="material-symbols-outlined"> person </span>
-			Zaloguj się
-		</a>
-		<a href="/singIn" class="singin"> Zarejestruj się</a>
-	</nav>
-</header>
+			<div class="text-input" class:show={y > 450}>
+				<span class="material-symbols-outlined"> location_on </span>
+				<input type="text" placeholder="Wpisz adres dostawy" />
+			</div>
+		</div>
+
+		<nav class="right-side">
+			<a href="/logIn" class="login">
+				<span class="material-symbols-outlined"> person </span>
+				Zaloguj się
+			</a>
+			<a href="/singIn" class="singin"> Zarejestruj się</a>
+		</nav>
+	</header>
+</div>
 
 <svelte:window bind:scrollY={y} />
 
 <style lang="scss">
-	header {
+	.h0 {
 		position: sticky;
 		top: 0;
 
+		height: 0;
+	}
+
+	header {
 		width: 100%;
 		height: 96px;
 
@@ -64,6 +75,53 @@
 				.svg {
 					width: 20px;
 				}
+			}
+		}
+
+		.text-input {
+			height: 56px;
+			width: 0;
+
+			display: flex;
+			align-items: center;
+			gap: 16px;
+
+			padding: 8px 0px;
+
+			border: medium none;
+
+			margin-left: 128px;
+
+			background: #ddd;
+
+			line-height: 24px;
+			font-size: 16px;
+
+			box-shadow: rgb(238, 238, 238) 0px -1px 0px inset;
+
+			transition: all 500ms;
+
+			overflow: hidden;
+
+			input {
+				height: 100%;
+				width: 100%;
+
+				border: none;
+				font-weight: normal;
+
+				background: #ddd;
+				padding: 0;
+
+				&:focus {
+					outline: 0;
+				}
+			}
+
+			&.show {
+				width: 722px;
+
+				padding: 8px 16px;
 			}
 		}
 
