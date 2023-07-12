@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { HamburgerOpen } from '$lib/ts/HamburgerStore';
+	import { hamburgerOpen } from '$lib/ts/Stores';
 	import { fade, fly } from 'svelte/transition';
 </script>
 
-{#if $HamburgerOpen}
+{#if $hamburgerOpen}
 	<main>
 		<div class="relative">
 			<div class="absolute" in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}>
@@ -36,12 +36,7 @@
 
 						<div class="links">
 							<a href="/">
-								<svg
-									aria-hidden="true"
-									focusable="false"
-									viewBox="0 0 24 24"
-									style="width: 24px;"
-								>
+								<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" style="width: 24px;">
 									<path
 										fill-rule="evenodd"
 										clip-rule="evenodd"
@@ -56,7 +51,7 @@
 					</div>
 				</div>
 
-				<button class="back" on:click={() => HamburgerOpen.set(false)} />
+				<button class="back" on:click={() => hamburgerOpen.set(false)} />
 			</div>
 		</div>
 	</main>
@@ -66,6 +61,7 @@
 	main {
 		position: sticky;
 		top: 0;
+		z-index: 3;
 
 		.relative {
 			position: relative;

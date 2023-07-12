@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HamburgerOpen } from '$lib/ts/HamburgerStore';
+	import { hamburgerOpen } from '$lib/ts/Stores';
 
 	let y: number;
 </script>
@@ -7,7 +7,7 @@
 <div class="h0">
 	<header class:white={y > 0}>
 		<div class="left-side">
-			<button class="hamburger-menu" on:click={() => HamburgerOpen.set(true)}>
+			<button class="hamburger-menu" on:click={() => hamburgerOpen.set(true)}>
 				<svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" class="svg">
 					<path
 						d="M19.167 3.333H.833v2.5h18.334v-2.5zm0 5.834H.833v2.5h18.334v-2.5zM.833 15h18.334v2.5H.833V15z"
