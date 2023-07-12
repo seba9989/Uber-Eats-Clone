@@ -145,6 +145,10 @@
 				background: #000;
 
 				padding: 12px 16px;
+
+				&:hover {
+					background: rgb(51, 51, 51);
+				}
 			}
 		}
 

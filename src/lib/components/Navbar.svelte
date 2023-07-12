@@ -150,11 +150,19 @@
 				gap: 4px;
 
 				background: #fff;
+
+				&:hover {
+					background: rgb(204, 204, 204);
+				}
 			}
 
 			.singin {
 				background: #000;
 				color: #fff;
+
+				&:hover {
+					background: rgb(51, 51, 51);
+				}
 			}
 		}
 	}
