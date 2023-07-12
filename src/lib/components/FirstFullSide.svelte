@@ -1,4 +1,6 @@
 <script lang="ts">
+	import {dataForm} from '$lib/ts/Stores'
+
 	type Delivery = 'now' | 'later';
 	type DeliveryDate = {
 		data: {
@@ -15,6 +17,8 @@
 	let deliveryType: Delivery = 'now';
 
 	let deliveryDate: DeliveryDate;
+
+	let listOpen = false;
 </script>
 
 <main>
@@ -26,7 +30,7 @@
 				<input type="text" placeholder="Wpisz adres dostawy" />
 			</div>
 
-			<button class="select-menu">
+			<button class="select-menu" on:click={() => (listOpen = !listOpen)}>
 				<span class="material-symbols-outlined icon"> schedule </span>
 
 				{#if deliveryType === 'now'}
@@ -39,6 +43,53 @@
 				{/if}
 
 				<span class="material-symbols-outlined icon"> expand_more </span>
+
+				{#if listOpen}
+					<div class="absolute">
+						<div class="list">
+							<button on:click={() => console.log('test')}>
+								<div>
+									<svg
+										width="20px"
+										height="20px"
+										fill="none"
+										viewBox="0 0 24 24"
+										xmlns="http://www.w3.org/2000/svg"
+										aria-hidden="true"
+										focusable="false"
+									>
+										<path
+											d="M12 2.83398C6.91671 2.83398 2.83337 6.91732 2.83337 12.0007C2.83337 17.084 6.91671 21.1673 12 21.1673C17.0834 21.1673 21.1667 17.084 21.1667 12.0007C21.1667 6.91732 17.0834 2.83398 12 2.83398ZM17 13.6673H10.3334V5.33398H12.8334V11.1673H17V13.6673Z"
+											fill="currentColor"
+										/>
+									</svg>
+								</div>
+								<p>Dostarcz teraz</p>
+							</button>
+							<button on:click={() => dataForm.set(true)}>
+								<div>
+									<svg
+										width="20px"
+										height="20px"
+										fill="none"
+										viewBox="0 0 24 24"
+										xmlns="http://www.w3.org/2000/svg"
+										aria-hidden="true"
+										focusable="false"
+									>
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M21.1666 8.66732V5.33398H18.6666V2.83398H16.1666V5.33398H7.83325V2.83398H5.33325V5.33398H2.83325V8.66732H21.1666ZM21.1666 21.1673H2.83325V10.334H21.1666V21.1673ZM8.66658 13.6673H6.16658V16.1673H8.66658V13.6673Z"
+											fill="currentColor"
+										/>
+									</svg>
+								</div>
+								<p>Zaplanuj na później</p>
+							</button>
+						</div>
+					</div>
+				{/if}
 			</button>
 
 			<button class="submit"> Wyszukaj restauracje </button>
@@ -123,6 +174,8 @@
 
 				align-items: center;
 
+				position: relative;
+
 				p {
 					margin: 0;
 				}
@@ -134,6 +187,60 @@
 					display: flex;
 					justify-content: center;
 					align-items: center;
+				}
+
+				.absolute {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+
+					width: 100%;
+
+					.list {
+						position: absolute;
+
+						min-height: 100%;
+
+						display: flex;
+						flex-direction: column;
+
+						box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+						background: #fff;
+
+						z-index: 2;
+
+						padding: 8px 0px 16px;
+
+						button {
+							/* width: 100%; */
+
+							display: flex;
+							align-items: center;
+							gap: 8px;
+
+							padding: 8px 16px;
+
+							p {
+								inline-size: max-content;
+							}
+
+							&:hover {
+								background-color: rgb(246, 246, 246);
+							}
+
+							div {
+								width: 32px;
+								height: 32px;
+
+								display: flex;
+								justify-content: center;
+								align-items: center;
+
+								border-radius: 100%;
+								background-color: rgb(246, 246, 246);
+							}
+						}
+					}
 				}
 			}
 
