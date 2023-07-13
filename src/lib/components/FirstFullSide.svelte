@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {dataForm} from '$lib/ts/Stores'
+	import { dataForm } from '$lib/ts/Stores';
 
 	type Delivery = 'now' | 'later';
 	type DeliveryDate = {
@@ -31,12 +31,40 @@
 			</div>
 
 			<button class="select-menu" on:click={() => (listOpen = !listOpen)}>
-				<span class="material-symbols-outlined icon"> schedule </span>
-
 				{#if deliveryType === 'now'}
+					<svg
+						width="20px"
+						height="20px"
+						fill="none"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+						aria-hidden="true"
+						focusable="false"
+					>
+						<path
+							d="M12 2.83398C6.91671 2.83398 2.83337 6.91732 2.83337 12.0007C2.83337 17.084 6.91671 21.1673 12 21.1673C17.0834 21.1673 21.1667 17.084 21.1667 12.0007C21.1667 6.91732 17.0834 2.83398 12 2.83398ZM17 13.6673H10.3334V5.33398H12.8334V11.1673H17V13.6673Z"
+							fill="currentColor"
+						/>
+					</svg>
 					<p>Dostarcz teraz</p>
 				{:else if deliveryDate}
 					<p>
+						<svg
+							width="20px"
+							height="20px"
+							fill="none"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+							aria-hidden="true"
+							focusable="false"
+						>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M21.1666 8.66732V5.33398H18.6666V2.83398H16.1666V5.33398H7.83325V2.83398H5.33325V5.33398H2.83325V8.66732H21.1666ZM21.1666 21.1673H2.83325V10.334H21.1666V21.1673ZM8.66658 13.6673H6.16658V16.1673H8.66658V13.6673Z"
+								fill="currentColor"
+							/>
+						</svg>
 						{deliveryDate.data.day}-{deliveryDate.data.month}-{deliveryDate.data.year},
 						{deliveryDate.time.hour}:{deliveryDate.time.minutes}
 					</p>
@@ -47,7 +75,12 @@
 				{#if listOpen}
 					<div class="absolute">
 						<div class="list">
-							<button on:click={() => console.log('test')}>
+							<button
+								on:click={() => {
+									console.log('test');
+									deliveryType = 'now';
+								}}
+							>
 								<div>
 									<svg
 										width="20px"
@@ -66,7 +99,12 @@
 								</div>
 								<p>Dostarcz teraz</p>
 							</button>
-							<button on:click={() => dataForm.set(true)}>
+							<button
+								on:click={() => {
+									dataForm.set(true);
+									deliveryType = 'later';
+								}}
+							>
 								<div>
 									<svg
 										width="20px"

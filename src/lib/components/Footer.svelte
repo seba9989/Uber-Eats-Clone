@@ -31,9 +31,21 @@
 			<a href="/">Zobacz wszystkie kraje</a>
 			<a href="/">Odbiór w pobliżu</a>
 			<a href="/">Informacje o Uber Eats</a>
-			<a href="/" class="language"
-				><span class="material-symbols-outlined"> translate </span>Polski</a
-			>
+			<a href="/" class="language">
+				<svg
+					aria-label="Wybierz język"
+					role="img"
+					focusable="false"
+					viewBox="0 0 16 15"
+					class="g4 ff co cp"
+					style="width: 16px;"
+				>
+					<path
+						d="M12.267 6.667H9.733l-.933 2.2c-.467-.2-1-.534-1.533-.934.866-.866 1.6-2 2-3.266h1.4v-2h-4v-2h-2v2h-4v2h1.466c.4 1.266 1.134 2.4 1.934 3.266-1.4.934-2.734 1.467-2.734 1.467v2.133L2 11.267c.133-.067 1.867-.667 3.667-2 .8.6 1.666 1.066 2.333 1.4l-1.8 4h2.2l.867-2h3.466l.867 2h2.2zm-5.2-2a6.79 6.79 0 01-1.4 2c-.534-.6-1.067-1.267-1.4-2zm3.066 6L11 8.733l.867 1.934z"
+					/>
+				</svg>
+				Polski
+			</a>
 		</div>
 	</div>
 

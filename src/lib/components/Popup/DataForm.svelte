@@ -2,13 +2,13 @@
 	import { dataForm } from '$lib/ts/Stores';
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
 	<style>
 		body {
 			overflow: hidden;
 		}
 	</style>
-</svelte:head>
+</svelte:head> -->
 
 {#if $dataForm}
 	<main>
