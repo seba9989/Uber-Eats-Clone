@@ -114,8 +114,17 @@
 		border-top: 1px solid rgb(226, 226, 226);
 		height: 522px;
 
+		@media (max-width: 500px) {
+			padding: 64px 16px 80px;
+			height: fit-content;
+		}
+
 		.container {
 			display: flex;
+			@media (max-width: 500px) {
+				flex-direction: column;
+				gap: 64px;
+			}
 
 			.logos {
 				width: 50%;
@@ -123,11 +132,23 @@
 
 				position: relative;
 
+				@media (max-width: 500px) {
+					height: fit-content;
+
+					display: flex;
+					flex-direction: column;
+					gap: 48px;
+				}
+
 				.stors {
 					position: absolute;
 					bottom: 0;
 					display: flex;
 					gap: 16px;
+
+					@media (max-width: 500px) {
+						position: static;
+					}
 				}
 			}
 
@@ -135,6 +156,10 @@
 				width: 25%;
 				display: flex;
 				flex-direction: column;
+
+				@media (max-width: 500px) {
+					width: 100%;
+				}
 
 				a {
 					font-weight: normal;
@@ -159,6 +184,11 @@
 			display: flex;
 			justify-content: space-between;
 
+			@media (max-width: 500px) {
+				flex-direction: column;
+				gap: 40px;
+			}
+
 			.icons {
 				display: flex;
 				gap: 24px;
@@ -173,6 +203,11 @@
 				display: flex;
 				gap: 40px;
 
+				@media (max-width: 500px) {
+					flex-direction: column;
+					gap: 16px;
+				}
+
 				* {
 					font-size: 14px;
 					font-weight: normal;
@@ -184,6 +219,17 @@
 			display: flex;
 			justify-content: end;
 			gap: 40px;
+
+			@media (max-width: 500px) {
+				flex-direction: column;
+				gap: 16px;
+
+				margin-bottom: 40px;
+
+				p {
+					width: 100%;
+				}
+			}
 
 			* {
 				font-size: 14px;
