@@ -118,11 +118,11 @@
 			font-weight: 400;
 			display: flex;
 			width: fit-content;
-		}
 
-		* {
-			font-weight: 400;
-			text-decoration: underline;
+			div {
+				font-weight: 400;
+				text-decoration: underline;
+			}
 		}
 	}
 </style>
