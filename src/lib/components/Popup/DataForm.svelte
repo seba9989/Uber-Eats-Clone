@@ -2,14 +2,6 @@
 	import { dataForm } from '$lib/ts/Stores';
 </script>
 
-<!-- <svelte:head>
-	<style>
-		body {
-			overflow: hidden;
-		}
-	</style>
-</svelte:head> -->
-
 {#if $dataForm}
 	<main>
 		<div class="relative">
@@ -35,18 +27,22 @@
 					</div>
 
 					<div class="form">
-						<h2>Wybierz godzinę</h2>
+						<div class="top">
+							<h2>Wybierz godzinę</h2>
 
-						<select name="" id="">
-							<option value="">data</option>
-						</select>
+							<select name="" id="">
+								<option value="">data</option>
+							</select>
 
-						<select name="" id="">
-							<option value="">godzina</option>
-						</select>
+							<select name="" id="">
+								<option value="">godzina</option>
+							</select>
+						</div>
 
-						<button class="black" on:click={() => dataForm.set(false)}>Zaplanuj</button>
-						<button class="white" on:click={() => dataForm.set(false)}>Dostarcz teraz</button>
+						<div class="bottom">
+							<button class="black" on:click={() => dataForm.set(false)}>Zaplanuj</button>
+							<button class="white" on:click={() => dataForm.set(false)}>Dostarcz teraz</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -81,6 +77,16 @@
 					margin-top: 80px;
 					background-color: #fff;
 
+					@media (max-width: 500px) {
+						width: 100vw;
+						height: 100vh;
+
+						margin: 0;
+
+						display: flex;
+						flex-direction: column;
+					}
+
 					.back {
 						width: 100%;
 						height: 48px;
@@ -93,11 +99,29 @@
 						padding: 24px;
 						gap: 12px;
 
+						@media (max-width: 500px) {
+							justify-content: space-between;
+							height: 100%;
+						}
+
+						.top {
+							display: flex;
+							flex-direction: column;
+							gap: 12px;
+						}
+
+						.bottom {
+							display: flex;
+							flex-direction: column;
+							gap: 12px;
+						}
+
 						h2 {
 							font-size: 32px;
 							font-weight: 700;
 
 							margin-bottom: 12px;
+							margin-top: 0;
 						}
 
 						select {
