@@ -55,6 +55,10 @@
 		a {
 			padding: 0 12px;
 
+			@media (max-width: 500px) {
+				padding: 0;
+			}
+
 			img {
 				width: 100%;
 			}
@@ -62,6 +66,10 @@
 			.title {
 				font-size: 28px;
 				font-weight: 700;
+
+				@media (max-width: 500px) {
+					font-size: 24px;
+				}
 			}
 
 			.link {
