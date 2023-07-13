@@ -111,15 +111,14 @@
 				{/if}
 
 				<svg
-					width="24px"
-					height="24px"
 					fill="none"
 					viewBox="0 0 24 24"
 					xmlns="http://www.w3.org/2000/svg"
 					aria-hidden="true"
 					focusable="false"
-					style="position: absolute; right: 4px; padding: 12px;"
-					class="icon"
+					class="arrow"
+					width="24px"
+					height="24px"
 				>
 					<path
 						d="M17 11.7494V14.916L12 11.0827L7 14.916V11.7494L12 7.91602L17 11.7494Z"
@@ -196,6 +195,19 @@
 </main>
 
 <style lang="scss">
+	.arrow {
+		width: 24px;
+		height: 24px;
+
+		@media (max-width: 500px) {
+			position: absolute;
+			right: 4px;
+			padding: 12px;
+			width: 48px;
+			height: 48px;
+		}
+	}
+
 	main {
 		height: 100vh;
 		background: url('/background.png') center center / cover no-repeat;
@@ -300,7 +312,6 @@
 				}
 
 				.icon {
-					/* aspect-ratio: 1/1; */
 					height: 48px;
 					width: 48px;
 
