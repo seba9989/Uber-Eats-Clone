@@ -98,23 +98,51 @@
 			url: '/'
 		}
 	];
+
+	let innerWidth: number;
+
+	let mobileVersion: boolean;
+
+	$: if (innerWidth != undefined) {
+		mobileVersion = innerWidth < 500;
+		// console.log(mobileVersion);
+	}
 </script>
 
-<header>
-	<h2>Miasta w pobliżu</h2>
+<svelte:window bind:innerWidth />
 
-	<a href="/pl/location">Wyświetl wszystkie miasta (ponad 500)</a>
-</header>
+<main>
+	<header>
+		<h2>Miasta w pobliżu</h2>
 
-<div class="map">Tu powinna być mapa</div>
+		{#if !mobileVersion}
+			<a href="/pl/location">Wyświetl wszystkie miasta (ponad 500)</a>
+		{/if}
+	</header>
 
-<div class="grid">
-	{#each cityList as city}
-		<a href={city.url}>{city.text}</a>
-	{/each}
-</div>
+	<div class="map">Tu powinna być mapa</div>
+
+	<div class="grid">
+		{#each cityList as city}
+			<a href={city.url}>{city.text}</a>
+		{/each}
+	</div>
+
+	{#if mobileVersion}
+		<a href="/pl/location" style="margin-top: 24px;">Wyświetl wszystkie miasta (ponad 500)</a>
+	{/if}
+</main>
 
 <style lang="scss">
+	main {
+		display: flex;
+		flex-direction: column;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -124,10 +152,6 @@
 			font-weight: 700;
 			font-size: 36px;
 		}
-
-		a {
-			text-decoration: underline;
-		}
 	}
 
 	.map {
@@ -135,6 +159,10 @@
 		height: 360px;
 
 		margin: 24px 0;
+
+		@media (max-width: 500px) {
+			margin: 16px 0;
+		}
 
 		display: flex;
 		justify-content: center;
@@ -153,6 +181,7 @@
 
 		* {
 			font-weight: normal;
+			text-decoration: none;
 		}
 	}
 </style>
