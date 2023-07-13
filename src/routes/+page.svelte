@@ -44,7 +44,7 @@
 </div>
 <div class="link">
 	<a href="/">
-		Dowiedz się, jak Uber Eats ustala kolejność lokali w kanale. <div>Więcej informacji</div>
+		Dowiedz się, jak Uber Eats ustala kolejność lokali w kanale. <span>Więcej informacji</span>
 	</a>
 </div>
 
@@ -114,12 +114,13 @@
 		display: flex;
 		justify-content: center;
 
+		padding: 0 16px;
+
 		a {
 			font-weight: 400;
-			display: flex;
-			width: fit-content;
+			display: inline;
 
-			div {
+			span {
 				font-weight: 400;
 				text-decoration: underline;
 			}
