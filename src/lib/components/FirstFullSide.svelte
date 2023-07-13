@@ -57,7 +57,16 @@
 				<input type="text" placeholder="Wpisz adres dostawy" />
 			</div>
 
-			<button class="select-menu" on:click={() => (listOpen = !listOpen)}>
+			<button
+				class="select-menu"
+				on:click={() => {
+					if (mobileVersion) {
+						dataForm.set(true);
+					} else {
+						listOpen = !listOpen;
+					}
+				}}
+			>
 				{#if deliveryType === 'now'}
 					<div class="icon">
 						<svg
