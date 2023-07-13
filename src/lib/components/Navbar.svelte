@@ -74,11 +74,20 @@
 		top: 0;
 
 		height: 0;
+
+		@media (max-width: 500px) {
+			position: absolute;
+			height: fit-content;
+		}
 	}
 
 	header {
 		width: 100%;
 		height: 96px;
+
+		@media (max-width: 500px) {
+			height: 72px;
+		}
 
 		display: flex;
 		justify-content: space-between;
@@ -97,9 +106,11 @@
 
 		transition: all 200ms;
 
-		&.white {
-			background: #fff;
-			box-shadow: rgb(226, 226, 226) 0px -2px 0px inset;
+		@media (min-width: 500px) {
+			&.white {
+				background: #fff;
+				box-shadow: rgb(226, 226, 226) 0px -2px 0px inset;
+			}
 		}
 
 		.left-side {
@@ -108,7 +119,7 @@
 			gap: 32px;
 
 			@media (max-width: 500px) {
-				&{
+				& {
 					gap: 24px;
 				}
 			}
