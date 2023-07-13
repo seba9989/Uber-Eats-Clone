@@ -146,6 +146,7 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 
 		h2 {
 			margin: 0;
@@ -175,7 +176,10 @@
 
 		display: grid;
 		grid-template-columns: auto auto auto auto;
-		grid-row: auto auto auto auto auto auto;
+
+		@media (max-width: 500px) {
+			grid-template-columns: auto auto;
+		}
 
 		gap: 24px;
 
