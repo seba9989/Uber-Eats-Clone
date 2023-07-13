@@ -208,6 +208,8 @@
 			padding: 0 16px;
 
 			padding-top: 72px;
+
+			margin-bottom: 48px;
 		}
 
 		h1 {

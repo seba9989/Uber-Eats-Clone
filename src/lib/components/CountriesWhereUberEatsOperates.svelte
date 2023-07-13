@@ -135,7 +135,6 @@
 
 <style lang="scss">
 	h2 {
-		margin-top: 80px;
 
 		font-size: 36px;
 		font-weight: 700;
