@@ -47,8 +47,6 @@
 		display: flex;
 		justify-content: space-between;
 
-		margin-bottom: 80px;
-
 		a {
 			padding: 0 12px;
 
