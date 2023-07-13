@@ -47,6 +47,11 @@
 		display: flex;
 		justify-content: space-between;
 
+		@media (max-width: 500px) {
+			flex-direction: column;
+			gap: 32px;
+		}
+
 		a {
 			padding: 0 12px;
 
